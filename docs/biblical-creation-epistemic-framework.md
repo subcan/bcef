@@ -1,8 +1,8 @@
 ---
 title: Biblical Creation Epistemic Framework
 date: 2026-08-26
-last_updated: 2026-09-06
-version: "20260906-170412"
+last_updated: 2026-09-10
+version: "20260910-111855"
 version_timezone: "UTC-08:00"
 category: architecture-patterns
 module: creation-implications
@@ -28,15 +28,15 @@ tags:
 
 # Biblical Creation Epistemic Framework
 
-## Context
+## Introduction
 
 The **Biblical Creation Epistemic Framework (BCEF)** is a structured method for evaluating scientific and historical knowledge claims from the premise that Scripture is true and authoritative, that the biblical creation account is actual history, and that the present creation has approximately 6,000 years of history.
 
-### Too long; didn't read (TL;DR)
+### Framework Summary
 
 BCEF distinguishes revealed fact, direct observation, calibrated measurement, physical interpretation, and historical reconstruction. It treats Creation and other biblically recorded events as real historical boundaries, rejects the conversion of long modeled timescales into actual ages, and compares candidate models by biblical admissibility, empirical compatibility, operational compatibility, explanatory coverage, and assumption cost. The framework preserves observations while exposing the assumptions required to turn present evidence into claims about unobserved history.
 
-### Concise definition
+### Concise Definition
 
 > **BCEF — Biblical Creation Epistemic Framework:** A systematic method for evaluating knowledge claims about creation by treating Scripture as authoritative revealed history, distinguishing observation from inference and historical reconstruction, and testing scientific models for biblical, temporal, empirical, and operational compatibility.
 

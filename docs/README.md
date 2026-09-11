@@ -1,6 +1,6 @@
 # BCEF — GitHub Pages
 
-A static reading page for the supplied Biblical Creation Epistemic Framework, version 20260906-170412 (UTC−08:00). The document's premises, claims, classifications, section numbering, equations, and provenance notes are retained. Earlier framework files were not merged into this edition.
+A static reading page for the supplied Biblical Creation Epistemic Framework, version 20260910-111855 (UTC−08:00). The document's premises, claims, classifications, section numbering, equations, and provenance notes are retained. Earlier framework files were not merged into this edition.
 
 ## Publish on GitHub Pages
 
@@ -20,9 +20,9 @@ Official instructions: https://docs.github.com/en/pages/getting-started-with-git
 - `index.html`: complete pre-rendered page, including equations in native MathML.
 - `assets/style.css`: desktop, mobile, and print layouts.
 - `assets/navigation.js`: active-section tracking and mobile menu behavior. All content and navigation remain available without JavaScript.
-- `biblical-creation-epistemic-framework.md`: unchanged supplied Markdown source, including its metadata.
+- `biblical-creation-epistemic-framework.md`: authoritative Markdown source, including its metadata.
 - `.nojekyll`: serves the static files without Jekyll processing.
-- `build.py`: optional regeneration script, requiring Python 3 and Pandoc. No build tool is needed to publish the supplied files.
+- `build.py`: optional regeneration script, requiring Python 3 and Pandoc (this edition was generated with Pandoc 3.1.3). No build tool is needed to publish the supplied files.
 
 ## Preview and update
 
@@ -34,11 +34,11 @@ For future content changes, edit the Markdown file, then run:
 python3 build.py
 ```
 
-The script regenerates `index.html`; publish that file together with the updated Markdown. Edit CSS and JavaScript directly for appearance and navigation changes. Keep the version and last_updated fields current in the source metadata.
+The script regenerates `index.html`; publish that file together with the updated Markdown. The generator groups the Introduction through the paragraph before `1. Premises` and preserves the former `context` and `too-long-didnt-read-tldr` HTML anchors. Edit the generator for HTML structure and CSS and JavaScript directly for appearance and navigation changes. Keep the version and last_updated fields current in the source metadata.
 
 ## Validation
 
-The package was checked for preserved document text, complete headings, unique section IDs, valid internal links, existing local assets, equation conversion, and JavaScript syntax. No browser-based visual test was run.
+The package was checked for preserved document text, complete headings, unique section IDs, valid internal links, existing local assets, equation conversion, and JavaScript syntax. Local Chrome checks covered 320, 390, 768, and 1440 px layouts, heading aliases, mobile menu behavior, active navigation, native MathML rendering, navigation without JavaScript, and print-to-PDF output. Wide display equations scroll within the content area. Other browser engines and the deployed GitHub Pages site were not tested.
 
 ## Content and licensing
 

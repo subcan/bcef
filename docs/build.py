@@ -18,6 +18,17 @@ for anchor, label in headings:
     items.append(f'<li><a href="#{anchor}"><span class="toc-num">{number}</span><span>{html.escape(title)}</span></a></li>')
 toc = '<ol class="toc">'+''.join(items)+'</ol>'
 body=re.sub(r'<(h[23]) id="([^"]+)">(.*?)</\1>',lambda m:f'<{m[1]} id="{m[2]}">{m[3]}<a class="permalink" href="#{m[2]}" aria-label="Link to {html.escape(plain(m[3]),quote=True)}">#</a></{m[1]}>',body)
+# Keep renamed heading links usable without changing the canonical navigation.
+for anchor, legacy in {'introduction': 'context', 'framework-summary': 'too-long-didnt-read-tldr'}.items():
+    body = re.sub(r'(<h[23] id="' + anchor + r'">)',
+                  r'\1<span id="' + legacy + r'" class="anchor-alias" aria-hidden="true"></span>', body)
+# The introduction includes every opening paragraph, up to the first numbered section.
+body, introduction_count = re.subn(
+    r'(<h2 id="introduction">.*?)(?=<h2 id="premises">)',
+    r'<section class="introduction" aria-labelledby="introduction">\1</section>\n',
+    body, count=1, flags=re.S)
+if introduction_count != 1:
+    raise ValueError('Expected Introduction followed by 1. Premises')
 body=re.sub(r'<span class="math display">.*?</span>',lambda m:'<div class="equation" tabindex="0" role="region" aria-label="Equation; scroll horizontally if needed">'+m[0]+'</div>',body,flags=re.S)
 # Pandoc places display math in paragraph wrappers; remove those wrappers.
 body=re.sub(r'<p>(<div class="equation".*?</div>)</p>',r'\1',body,flags=re.S)
